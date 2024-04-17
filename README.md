@@ -18,12 +18,14 @@
 4. **Configure the Environment**
     Copy the `.env.example` file to `.env` and configure your database credentials.
 
-    `DB_CONNECTION=mysql
+    ```
+    DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
     DB_PORT=3306
     DB_DATABASE=db_lks_webdonasi
     DB_USERNAME=root
-    DB_PASSWORD=`
+    DB_PASSWORD=
+    ```
 
 5. **Generate Application Key**
     Generate a new application key: `php artisan key:generate`
