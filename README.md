@@ -46,4 +46,7 @@
     `php artisan serve`  
 
     You can now access the Laravel project at [http://localhost:8000](http://localhost:8000).
+
+## API Documentation
+You can see API Documentation from Postman by [https://documenter.getpostman.com/view/4171991/2sA3BkdDgY](Access This Link)
   

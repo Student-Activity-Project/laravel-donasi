@@ -117,8 +117,8 @@ class DonasiController extends Controller
                 $ud->save();
 
                 $updatedonasi = Donasi::where('id', $id)->update(
-                    ['total_donasi' => $post->total_donasi + $request->total_donasi]
-                );  
+                    ['total_donasi' => ($post->total_donasi + $request->jumlah_donasi)]
+                );
 
                 DB::commit();
                 return response()->json([

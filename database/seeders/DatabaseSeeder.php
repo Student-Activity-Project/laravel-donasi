@@ -28,5 +28,13 @@ class DatabaseSeeder extends Seeder
             'jumlah_donasi' => 50000,
             'id_user' => 2
        ]);
+
+       \App\Models\Donasi::create([
+            'judul' => 'Bantu Korban Gempa',
+            'deskripsi' => 'Bantu korban banjir di daerah XYZ',
+            'target_donasi' => 50000000,
+            'total_donasi' => 0,
+            'id_user' => 2
+        ]);
     }
 }

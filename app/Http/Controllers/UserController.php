@@ -10,7 +10,7 @@ use App\Http\Resources\UserResource;
 class UserController extends Controller
 {
     
-    public function profil(Request $request){
+    public function me(Request $request){
         return $request->user();
     }
     

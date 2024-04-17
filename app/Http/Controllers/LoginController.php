@@ -12,16 +12,16 @@ class LoginController extends Controller
 
     public function login(Request $request){
         $validator = Validator::make($request->all(), [
-            'username'   =>  'required',
+            'username'   =>  'required|email',
             'password'   =>  'required'
         ]);
         if ($validator->fails()) {
             return response()->json($validator->errors(), 400);
         }
         
-        $user = User::where("username", $request->username)->first();
+        $user = User::where("email", $request->username)->first();
         if (!Hash::check($request->password, $user->password)) {
-            return response()->json(['status' => false, 'message' => 'Username atau password tidak sama' ], 501);
+            return response()->json(['status' => false, 'message' => 'Username or password do not match or empty' ], 200);
         }
 
         $token = $user->createToken("donasi", [$user->role])->plainTextToken;
@@ -36,6 +36,6 @@ class LoginController extends Controller
 
     public function logout(Request $request){
         $request->user()->currentAccessToken()->delete();
-        return response()->json(['status' => true, 'message' => 'Token berhasil dihapus'], 200);
+        return response()->json(['status' => true, 'message' => 'Successfully logged out'], 200);
     }
 }

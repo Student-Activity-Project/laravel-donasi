@@ -9,4 +9,12 @@ class Donasi extends Model
 {
     use HasFactory;
     protected $table = 'donasi';
+
+    protected $fillable = [
+        'judul',
+        'deskripsi',
+        'target_donasi',
+        'total_donasi',
+        'id_user',
+    ];
 }

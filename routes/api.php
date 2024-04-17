@@ -21,7 +21,7 @@ Route::post("/auth/login", [LoginController::class, "login"]);
 
 Route::middleware(['auth:sanctum'])->group(function() {
     Route::prefix('auth')->group(function () {
-        Route::get("/profil", [UserController::class, "profil"]);
+        Route::get("/me", [UserController::class, "me"]);
         Route::post("/logout", [LoginController::class, "logout"]);
     });
 
@@ -30,8 +30,8 @@ Route::middleware(['auth:sanctum'])->group(function() {
         Route::get("/kampanye_saya", [DonasiController::class, "kampanye_saya"]);
         Route::get("/detail_kampanye/{id}", [DonasiController::class, "detail_kampanye"]);
         Route::post("/open_kampanye", [DonasiController::class, "open_kampanye"]);
-        Route::delete("/hapus_kampanye", [DonasiController::class, "hapus_kampanye"]);
-        Route::post("/beri_donasi", [DonasiController::class, "beri_donasi"]);
+        Route::delete("/hapus_kampanye/{id}", [DonasiController::class, "hapus_kampanye"]);
+        Route::post("/beri_donasi/{id}", [DonasiController::class, "beri_donasi"]);
     });
 
     
